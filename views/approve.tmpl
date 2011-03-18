@@ -1,0 +1,44 @@
+<html>
+
+  <head>
+
+    <title>Approve</title>
+
+  </head>
+
+  <body>
+    <header>
+      <a href="./index">Uncomfortable Question Generator</a>
+    </header>
+
+    #if $approved:
+    <form action = "./approve" method = "post">
+      #if $changed:
+      <p>
+	Your change has been saved.
+      </p>
+      #end if
+      #if $submits:
+      #for $elt in $submits:
+      <br />
+      Approve: <input type = "submit" name = "which" value = "$elt" />
+      <br />
+      Delete: <input type = "submit" name = "del_which" value = "$elt" />
+      <br />
+      #end for
+      #else:
+      <p>
+	Sorry, there aren't any submissions now.  Check back later!
+      </p>
+      #end if
+
+    </form>
+    #else
+    <p>
+      Sorry, you're not approved for approving.
+    </p>
+    #end if
+
+  </body>
+
+</html>

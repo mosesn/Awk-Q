@@ -9,17 +9,14 @@
     <header>
       <a href="./index">Uncomfortable Question Generator</a>
     </header>
+    #if $submitted:
     <p>
-      <a href = "approve">Once you've been approved, head over here!</a>
+      Thanks, we'll process your submission asap, go ahead!
     </p>
-
-    #if $good:
-    Your cookie was set, go ahead!
     #end if
 
-    <form action="./set_cookie" method="post">
-      <input type = "text" name = "username" />
-      <input type = "password" name = "password" />
+    <form action="./submit" method="post">
+      <textarea COLS=40 ROWS=6 name = "awk_q" ></textarea>
       <input type = "submit" value = "Submit plx" />
     </form>
 
